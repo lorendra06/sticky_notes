@@ -1,0 +1,20 @@
+<! -- notes/templates/notes/note_detail.html -->
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card note-card p-4 shadow-lg">
+            <h2>{{ note.title }}</h2>
+            <p class="note-body">{{ note.body }}</p>
+            <div class="mt-4 pt-3 border-top text-muted small">
+                <p>Created: {{ note.created_at }} | Author: {{ note.author.username }}</p>
+            </div>
+            <div class="d-flex gap-2 mt-3">
+                <a href="{% url 'note_edit' note.id %}" class="btn btn-warning btn-custom text-white">Edit</a>
+                <a href="{% url 'note_delete' note.id %}" class="btn btn-danger btn-custom">Delete</a>
+                <a href="{% url 'note_list' %}" class="btn btn-secondary btn-custom ms-auto">Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

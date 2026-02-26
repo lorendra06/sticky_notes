@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Board - {{page_title}}{% endblock title %}
+
+{% block content %}
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>{{page_title}}</h2>
+        <a href="{% url 'note_create' %}" class="btn btn-success btn-custom">+ New Note</a>
+    </div>
+
+    <div class="row">
+        {% for note in notes %}
+            <div class="col-md-4 mb-4 note-container">
+                <div class="card note-card h-100">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="{% url 'note_detail' note.id %}" class="text-dark text-decoration-none">
+                                {{ note.title }}
+                            </a>
+                        </h4>
+                        <p class="note-body card-text">{{ note.body|truncatechars:100 }}</p>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <div class="col-12 text-center">
+                <p>No notes available.</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}

@@ -1,0 +1,33 @@
+<!-- notes/templates/notes/note_form.html -->
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow p-4">
+            <h2 class="mb-4 text-center">
+                {% if form.instance.id %}Edit Note{% else %}Create Note{% endif %}
+            </h2>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary btn-custom">Save Note</button>
+                    <a href="{% url 'note_list' %}" class="btn btn-outline-secondary btn-custom">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Styling for Django auto-generated inputs */
+    input, textarea {
+        display: block;
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+</style>
+{% endblock content %}

@@ -1,0 +1,119 @@
+/* Page background */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+header {
+    background-color: #212529;
+    color: white;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Sticky Notes style */
+.note-card {
+    background: #fffa81; /* Classic post-it yellow */
+    padding: 20px;
+    margin: 15px;
+    min-height: 250px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+    border: none;
+    position: relative;
+}
+
+/* Random tilt effect for a realistic look */
+.note-card:nth-child(even) {
+    transform: rotate(2deg);
+}
+.note-card:nth-child(odd) {
+    transform: rotate(-1deg);
+}
+
+.note-card:hover {
+    transform: scale(1.05) rotate(0deg) !important;
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+/* Special font for note content */
+.note-body {
+    font-family: 'Reenie Beanie', cursive;
+    font-size: 1.5rem;
+    line-height: 1.2;
+}
+
+/* Buttons and links */
+.btn-custom {
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #6c757d;
+    text-decoration: none;
+}
+
+/* --- Authentication & Form Styles --- */
+
+/* Style for help texts (password requirements) */
+.form-help-text {
+    font-size: 0.8rem;
+    color: #6c757d;
+    margin-top: 4px;
+    display: block;
+    line-height: 1.4;
+}
+
+/* Style for lists (ul) inside help texts to make them less bulky */
+.form-help-text ul {
+    padding-left: 1.2rem;
+    margin-bottom: 0.5rem;
+    list-style-type: circle;
+}
+
+/* Improve the look of input fields globally for Django forms */
+.django-form input {
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    padding: 10px 15px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+/* Green focus state for the Registration form */
+.django-form input:focus {
+    border-color: #198754;
+    box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.15);
+    outline: none;
+}
+
+/* Styling for form labels to make them stand out */
+.django-form label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #495057;
+    display: block;
+}
+
+/* Vertical spacing between form field groups */
+.form-field-group {
+    margin-bottom: 1.5rem;
+}
+
+/* Better visibility for form errors */
+.text-danger.small {
+    display: block;
+    padding: 5px 10px;
+    background-color: rgba(220, 53, 69, 0.1);
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
